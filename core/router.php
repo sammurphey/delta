@@ -1,4 +1,5 @@
 <?php
+jsLogs("routing...");
 switch($current_path) {
 	case "":
 	case "/":

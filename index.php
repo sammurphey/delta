@@ -28,19 +28,21 @@ function valExists($key, $arr) {
 function xhrFetch($url, $params = false) {
 	if (strpos($url, 'http') == false) {
 		$xhr_url = "https://api.sammurphey.net/" . $url;
+
 	} else {
 		$xhr_url = $url;
 	}
+	jsLogs("xhrFetching: " . $xhr_url);
 	$xhr_res = "";
-	if (function_exists("curl_init")) {
-		$ch = curl_init();
-	    curl_setopt($ch, CURLOPT_URL, $url);
-	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	    $xhr_res = curl_exec($ch);
-	    curl_close($ch);
-	} else {
+	//if (function_exists("curl_init")) {
+	//	$ch = curl_init();
+	  //  curl_setopt($ch, CURLOPT_URL, $url);
+	    //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	   // $xhr_res = curl_exec($ch);
+	   // curl_close($ch);
+	//} else {
 		$xhr_res = file_get_contents($xhr_url);
-	}
+	//}
 	if (strlen($xhr_res) > 0) {
 		$xhr_first = substr($xhr_res, 0, 1);
 		if ($xhr_first == "{" || $xhr_first == "[") {
