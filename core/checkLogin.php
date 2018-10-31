@@ -4,7 +4,7 @@ jsLogs("checking login...");
 if ($user_name && $user_token) {
 	jsLogs("has cookies");
 	$verification = xhrFetch("delta?action=verify_token&username=" . $user_name . "&token=" . $user_token);
-	if ($verification["success"] !== false) {
+	if (valExists("success", $verification)) {
 		jsLogs("token verified");
 		require_once($php_root . "core/router.php");
 	} else {

@@ -8,9 +8,6 @@ if (empty($_REQUEST) === false) {
 	jsLogs("pw: " . $password_input);
 	$attempt_url = "delta?action=login&username=" . $username_input . "&password=" . $password_input;
 	$attempt = xhrFetch($attempt_url);
-	echo "<pre>";
-	print_r($attempt);
-	echo "</pre>";
 	if ($attempt["success"] !== false) {
 		jsLogs("correct username + password");
 		$isLoggedIn = true;
