@@ -13,7 +13,8 @@ switch($current_path) {
 	case "logout":
 		require_once($php_root . "views/logout.php");
 		break;
-	case "about":
+	case "new":
+		require_once($php_root . "views/new.php");
 		break;
 	case "early-access":
 		break;
