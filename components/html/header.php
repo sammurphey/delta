@@ -20,3 +20,6 @@
 	<link rel="cannonical" href="<?php echo $document_url; ?>">
 
 	<link rel="shortcut icon" href="https://sammurphey.net/favicon.ico">
+	<style>
+		<?php echo file_get_contents($htp_root . "src/css/index.css"); ?>
+	</style>

@@ -56,19 +56,33 @@ function jsLogs($data) {
     echo($html);
 }
 function newFormField($id, $name, $type = "text", $val = false) {
-	$html = "<div class='field'><label for='" . $id . "'>" . $name . "</label>";
+	$html = "<div class='field'>";
 	switch($type) {
 		case "text":
 		case "password":
 		case "email":
 		case "tel":
-			$input = "<input id='" . $id . "' name='" . $id . "' type='" . $type . "'";
+			$input = "<label for='" . $id . "'>" . $name . "</label><input id='" . $id . "' name='" . $id . "' type='" . $type . "'";
 			if ($val) {
 				$input .= "value='" . $val . "'";
 			}
+			$input .= "/>";
+			break;
+		case "textfield":
+			$input = "<label for='" . $id . "'>" . $name . "</label><textarea id='" . $id . "' name='" . $id . "'>";
+			if (is_array($val)) {
+				foreach($val as $v) {
+					$input .= $v ."
+					";
+				}
+			}
+			if ($val) {
+				$input .= $val;
+			}
+			$input .= "</textarea>";
 			break;
 		case "select":
-			$input = "<select id='" . $id . "' name='" . $id . "'><option value='null'>Select One</option>";
+			$input = "<label for='" . $id . "'>" . $name . "</label><select id='" . $id . "' name='" . $id . "'><option value='null'>Select One</option>";
 				if(is_array($val)) {
 					foreach($val as $v) {
 						$input .= "<option value='" . $v . "'>" . $v . "</option>";
@@ -77,6 +91,13 @@ function newFormField($id, $name, $type = "text", $val = false) {
 					$input .= "<option value='" . $val . "'>" . $val . "</option>";
 				}
 			$input .= "</select>";
+			break;
+		case "submit":
+			$input = "<input id='" . $id . "' name='" . $id . "' type='" . $type . "'";
+			if ($val) {
+				$input .= "value='" . $val . "'";
+			}
+			$input .= "/>";
 			break;
 	}
 	$html .= $input;

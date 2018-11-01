@@ -1,0 +1,8 @@
+.field {
+  width: 256px; }
+  .field + .field {
+    margin-top: 16px; }
+  .field * {
+    width: 100%; }
+  .field label {
+    display: block; }

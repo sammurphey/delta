@@ -29,17 +29,9 @@ if (!$isLoggedIn) {
 		echo "<p class='error_msg'>" . $login_msg . "</p>";
 	}
 	echo "<form action='" . $htp_root . "' method='POST'>";
-		echo "<div class='field'>";
-			echo "<label for='username'>Username</label>";
-			echo "<input id='username' name='username' type='text' />";
-		echo "</div>";
-		echo "<div class='field'>";
-			echo "<label for='password'>Password</label>";
-			echo "<input id='password' name='password' type='password' />";
-		echo "</div>";
-		echo "<div class='field'>";
-			echo "<input id='login' type='submit' value='Login' />";
-		echo "</div>";
+		echo newFormField("username", "Username");
+		echo newFormField("password", "Password", "password");
+		echo newFormField("login", "Login", "submit", "Login");
 	echo "</form>";
 	require_once($php_root . "components/html/footer.php");
 }
