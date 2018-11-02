@@ -81,6 +81,13 @@ function newFormField($id, $name, $type = "text", $val = false) {
 			}
 			$input .= "</textarea>";
 			break;
+		case "checkbox":
+			$input = "<input id='" . $id . "' name='" . $id . "' type='" . $type . "'";
+			if ($val) {
+				$input .= " checked";
+			}
+			$input .= " /><label class='checkbox_label' for='" . $id . "'>" . $name . "</label>";
+			break;
 		case "select":
 			$input = "<label for='" . $id . "'>" . $name . "</label><select id='" . $id . "' name='" . $id . "'><option value='null'>Select One</option>";
 				if(is_array($val)) {
@@ -91,6 +98,14 @@ function newFormField($id, $name, $type = "text", $val = false) {
 					$input .= "<option value='" . $val . "'>" . $val . "</option>";
 				}
 			$input .= "</select>";
+			break;
+		case "photo":
+		case "photos":
+			$input = "<label for='" . $id . "'>" . $name . "</label><input id='" . $id . "' name='" . $id . "' type='hidden' /><button id='" . $id . "_browser' class='photo_browser_btn";
+				if ($type == "photos") {
+					$input .= " multi";
+				}
+			$input .= "'>Browse</button>";
 			break;
 		case "submit":
 			$input = "<input id='" . $id . "' name='" . $id . "' type='" . $type . "'";

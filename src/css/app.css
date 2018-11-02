@@ -1,8 +1,88 @@
-.field {
-  width: 256px; }
-  .field + .field {
-    margin-top: 16px; }
-  .field * {
-    width: 100%; }
-  .field label {
-    display: block; }
+textarea,
+input {
+  background: #989898 !important;
+  border: 1px solid #000;
+  color: #FFF;
+  cursor: pointer;
+  display: block;
+  height: auto;
+  font-family: "Kepler-452b", monospace;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: calc(16px * 2);
+  min-width: 64px;
+  outline: none;
+  padding: 4px;
+  position: relative; }
+  textarea::placeholder,
+  input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ECECEC;
+    opacity: 1;
+    /* Firefox */ }
+  textarea:-ms-input-placeholder,
+  input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #ECECEC; }
+  textarea::-ms-input-placeholder,
+  input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #ECECEC; }
+  textarea:hover,
+  input:hover {
+    background: #b1b1b1 !important;
+    border-color: #5f5f5f !important;
+    color: #FFF; }
+    textarea:hover::placeholder,
+    input:hover::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #FFF;
+      opacity: 1;
+      /* Firefox */ }
+    textarea:hover:-ms-input-placeholder,
+    input:hover:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #FFF; }
+    textarea:hover::-ms-input-placeholder,
+    input:hover::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #FFF; }
+  textarea:focus, textarea:active,
+  input:focus,
+  input:active {
+    border-color: #00EFF1 !important;
+    color: #FFF; }
+    textarea:focus::placeholder, textarea:active::placeholder,
+    input:focus::placeholder,
+    input:active::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #FFF;
+      opacity: 1;
+      /* Firefox */ }
+    textarea:focus:-ms-input-placeholder, textarea:active:-ms-input-placeholder,
+    input:focus:-ms-input-placeholder,
+    input:active:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #FFF; }
+    textarea:focus::-ms-input-placeholder, textarea:active::-ms-input-placeholder,
+    input:focus::-ms-input-placeholder,
+    input:active::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #FFF; }
+  textarea[type="submit"],
+  input[type="submit"] {
+    background: rgba(255, 255, 255, 0) !important;
+    color: #000 !important; }
+    textarea[type="submit"]:hover,
+    input[type="submit"]:hover {
+      background: #FFF !important;
+      border-color: #5f5f5f !important;
+      color: #5f5f5f !important; }
+    textarea[type="submit"]:focus, textarea[type="submit"]:active,
+    input[type="submit"]:focus,
+    input[type="submit"]:active {
+      border-color: #00EFF1 !important;
+      color: #00EFF1 !important; }
+  textarea + *,
+  input + * {
+    margin-top: 8px; }

@@ -1,12 +1,2 @@
-.field {
-	width: 256px;
-	& + & {
-		margin-top: 16px;
-	}
-	* {
-		width: 100%;
-	}
-	label {
-		display: block;
-	}
-}
+@import "vars";
+@import "components/forms.scss";
