@@ -105,7 +105,12 @@ function newFormField($id, $name, $type = "text", $val = false) {
 				if ($type == "photos") {
 					$input .= " multi";
 				}
-			$input .= "'>Browse</button>";
+			$input .= "'>Browse ";
+			$browse_photos_icon = xhrFetch($_SERVER['DOCUMENT_ROOT'] . "/delta/src/img/icons/image_search.svg");
+			if ($browse_photos_icon) {
+				$input .= $browse_photos_icon;
+			}
+			$input .= "</button>";
 			break;
 		case "submit":
 			$input = "<input id='" . $id . "' name='" . $id . "' type='" . $type . "'";

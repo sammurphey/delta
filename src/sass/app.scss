@@ -1,2 +1,18 @@
 @import "vars";
-@import "components/forms.scss";
+@import "components/forms";
+@import "components/header";
+
+main {
+	opacity: 1;
+	padding: 16px;
+}
+button, .btn {
+	padding: 8px;
+	.icon {
+		padding: 0;
+	}
+}
+p {
+	font-style: italic;
+	font-weight: 400;
+}

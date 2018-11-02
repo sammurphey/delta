@@ -1,0 +1,12 @@
+#main_nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 16px;
+	.header_btn {
+		border: 0;
+		padding: 8px;
+		.icon {
+			padding: 0;
+		}
+	}
+}
