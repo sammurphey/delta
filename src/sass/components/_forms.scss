@@ -1,9 +1,60 @@
+@import "../vars";
+
 .field {
-	* + & {
-		margin-top: 16px;
+	margin-top: 8px;
+	&:not(:first-child) {
+		margin-top: 32px;
 	}
 	input:not([type="submit"]), textarea {
 		font-family: "Ubuntu Mono", monospace;
 		font-weight: 300;
+		width: 100%;
+		&[type="checkbox"] {
+			height: 24px;
+			float: left;
+			min-width: 24px;
+			width: 0px;
+		}
+	}
+	select {
+		background: rgba(255, 255, 255, 0);
+		border: 1px solid $darkGrey;
+		color: $darkGrey;
+		cursor: pointer;
+		font-family: "Kepler-452b", monospace;
+		height: 48px;
+		margin-top: 8px;
+		outline: 0;
+		padding: 8px;
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: $tealColor;
+			color: $tealColor;
+		}
+		&:active {
+			background: rgba(0, 0, 0, 0.05);
+		}
+		option {
+			background: rgba(255, 255, 255, 0);
+			border: 1px solid $tealColor;
+			color: $darkGrey;
+			cursor: pointer;
+			&:not(:first-child) {
+				font-family: "Ubuntu Mono", monospace;
+			}
+		}
+
+	}
+	textarea {
+		min-height: 280px;
+	}
+	label {
+		display: block;
+		margin-right: 8px;
+		&.checkbox_label {
+			display: inline-block;
+			margin: 8px;
+		}
 	}
 }

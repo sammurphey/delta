@@ -1,9 +1,66 @@
-* + .field {
-  margin-top: 16px; }
+.photo_browser_btn {
+  align-items: center;
+  color: #5f5f5f;
+  display: flex;
+  font-family: "Kepler-452b", monospace;
+  font-weight: normal; }
+  .photo_browser_btn .icon {
+    fill: #5f5f5f;
+    height: 20px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    width: 20px; }
+  .photo_browser_btn:active .icon, .photo_browser_btn:focus .icon, .photo_browser_btn:hover .icon {
+    fill: #00EFF1; }
 
-.field input:not([type="submit"]), .field textarea {
-  font-family: "Ubuntu Mono", monospace;
-  font-weight: 300; }
+button {
+  align-items: center;
+  display: flex;
+  justify-content: center; }
+
+.field {
+  margin-top: 8px; }
+  .field:not(:first-child) {
+    margin-top: 32px; }
+  .field input:not([type="submit"]), .field textarea {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 300;
+    width: 100%; }
+    .field input:not([type="submit"])[type="checkbox"], .field textarea[type="checkbox"] {
+      height: 24px;
+      float: left;
+      min-width: 24px;
+      width: 0px; }
+  .field select {
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid #5f5f5f;
+    color: #5f5f5f;
+    cursor: pointer;
+    font-family: "Kepler-452b", monospace;
+    height: 48px;
+    margin-top: 8px;
+    outline: 0;
+    padding: 8px; }
+    .field select:hover, .field select:focus, .field select:active {
+      border-color: #00EFF1;
+      color: #00EFF1; }
+    .field select:active {
+      background: rgba(0, 0, 0, 0.05); }
+    .field select option {
+      background: rgba(255, 255, 255, 0);
+      border: 1px solid #00EFF1;
+      color: #5f5f5f;
+      cursor: pointer; }
+      .field select option:not(:first-child) {
+        font-family: "Ubuntu Mono", monospace; }
+  .field textarea {
+    min-height: 280px; }
+  .field label {
+    display: block;
+    margin-right: 8px; }
+    .field label.checkbox_label {
+      display: inline-block;
+      margin: 8px; }
 
 #main_nav {
   display: flex;
